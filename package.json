@@ -9,5 +9,16 @@
     "@types/jest": "^29.5.12",
     "jest": "^29.7.0",
     "ts-jest": "^29.2.5"
+  },
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "build": "tsc",
+    "prisma:init": "npx prisma init",
+    "prisma:generate": "npx prisma generate",
+    "prisma:migrate": "dotenv -e ../.env -- npx prisma migrate dev",
+    "start:prod": "npm run build && npm start",
+    "test": "jest",
+    "migrate": "npx prisma migrate dev"
   }
 }
